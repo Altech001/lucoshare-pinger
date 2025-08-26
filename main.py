@@ -34,7 +34,7 @@ app = FastAPI(lifespan=lifespan)
 async def health_check():
     async with aiohttp.ClientSession() as session:
         try:
-            async with session.get("https://luco-share-io.onrender.com/") as response:
+            async with session.get("https://lucoshare-pinger.onrender.com/heath") as response:
                 status = response.status
                 return {"status": "healthy", "self_ping_status": status}
         except Exception as e:
